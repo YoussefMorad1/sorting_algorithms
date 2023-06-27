@@ -1,18 +1,17 @@
 #include "sort.h"
-
 /**
  * selection_sort - hi
  * @array: hi
  * @size: size
  */
-void selection_sort(int *array, size_t size)
+void selection_sort(int *arr, size_t size)
 {
-	int i, j, mnIdx, n = size;
+	int i, j, mnIdx = 0, n = size, tmp;
 
-	for (i = 0; i < (int)n; ++i)
+	for (i = 0; i < n; ++i)
 	{
 		mnIdx = i;
-		for (j = i + 1; j < (int)n; ++j)
+		for (j = i + 1; j < n; ++j)
 		{
 			if (arr[j] < arr[mnIdx])
 				mnIdx = j;
