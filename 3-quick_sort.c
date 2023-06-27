@@ -67,6 +67,7 @@ void quick_sort_real(int *arr, int l, int r, int n)
  */
 void quick_sort(int *arr, size_t size)
 {
-
+	if (!arr)
+		return;
 	quick_sort_real(arr, 0, (int)size, (int)size);
 }
