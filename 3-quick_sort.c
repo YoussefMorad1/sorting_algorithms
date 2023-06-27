@@ -16,14 +16,19 @@ void swap(int *a, int *b)
 /**
  * partition - partition of quick sort
  * @arr: array
+ * @l: left
+ * @r: right
  * @n: size
+ * Return: mxIdx
  */
-int partition(int *arr, int l, int r, int n) {
+int partition(int *arr, int l, int r, int n)
+{
 	int mnIdx = l - 1, i;
 
-	/*swap(&arr[n - 1], &arr[0]);*/
-	for (i = l; i < r; ++i) {
-		if (arr[i] < arr[r - 1]) {
+	for (i = l; i < r; ++i)
+	{
+		if (arr[i] < arr[r - 1])
+		{
 			mnIdx++;
 			swap(&arr[mnIdx], &arr[i]);
 			if (mnIdx != i)
@@ -33,7 +38,7 @@ int partition(int *arr, int l, int r, int n) {
 	swap(&arr[++mnIdx], &arr[r - 1]);
 	if (mnIdx != r - 1)
 		print_array(arr, n);
-	return mnIdx;
+	return (mnIdx);
 }
 
 /**
@@ -41,16 +46,17 @@ int partition(int *arr, int l, int r, int n) {
  * @arr: hi
  * @l: hi
  * @r: hi
+ * @n: hi
  */
 void quick_sort_real(int *arr, int l, int r, int n)
 {
 
 	int pivot = 0;
 
-	if (l >= r)
+	if (r - l + 1 <= 1)
 		return;
 	pivot = partition(arr, l, r, n);
-        quick_sort_real(arr, l, pivot, n);
+	quick_sort_real(arr, l, pivot, n);
 	quick_sort_real(arr, pivot + 1, r, n);
 }
 
@@ -61,5 +67,6 @@ void quick_sort_real(int *arr, int l, int r, int n)
  */
 void quick_sort(int *arr, size_t size)
 {
+
 	quick_sort_real(arr, 0, (int)size, (int)size);
 }
