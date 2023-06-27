@@ -6,8 +6,11 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *ptr = *list, *nxt, *bck;
+	listint_t *ptr, *nxt, *bck;
 
+	if (!list)
+		return;
+	ptr = *list;
 	while (ptr)
 	{
 		nxt = ptr->next;
@@ -15,7 +18,6 @@ void insertion_sort_list(listint_t **list)
 			break;
 		if (nxt->n < ptr->n)
 		{
-			/*printf("num: %d\n", nxt->n);*/
 			ptr->next = nxt->next;
 			if (ptr->next)
 				ptr->next->prev = ptr;
