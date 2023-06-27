@@ -53,7 +53,7 @@ void quick_sort_real(int *arr, int l, int r, int n)
 
 	int pivot = 0;
 
-	if (r - l + 1 <= 1)
+	if (r - l <= 1)
 		return;
 	pivot = partition(arr, l, r, n);
 	quick_sort_real(arr, l, pivot, n);
