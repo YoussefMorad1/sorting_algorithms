@@ -8,6 +8,8 @@ void counting_sort(int *arr, size_t size)
 {
 	int n = (int)size, mx = arr[0], i, *count, *result;
 
+	if (!arr)
+		return;
 	result = malloc(n * sizeof(int));
 	if (!result)
 		return;
