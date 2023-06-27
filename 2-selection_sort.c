@@ -19,6 +19,7 @@ void selection_sort(int *arr, size_t size)
 		tmp = arr[mnIdx];
 		arr[mnIdx] = arr[i];
 		arr[i] = tmp;
-		print_array(arr, size);
+		if (mnIdx != i)
+			print_array(arr, size);
 	}
 }
