@@ -8,7 +8,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *ptr = *list, *nxt, *bck;
 
-	while(ptr)
+	while (ptr)
 	{
 		nxt = ptr->next;
 		if (!nxt)
@@ -20,7 +20,7 @@ void insertion_sort_list(listint_t **list)
 			if (ptr->next)
 				ptr->next->prev = ptr;
 			bck = ptr->prev;
-			while(bck)
+			while (bck)
 			{
 				nxt->next = bck->next;
 				nxt->next->prev = nxt;
