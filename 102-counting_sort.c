@@ -1,5 +1,9 @@
 #include "sort.h"
-
+/**
+ * counting_sort - hi
+ * @arr: hi
+ * @size: size of arr
+ */
 void counting_sort(int *arr, size_t size)
 {
 	int n = (int)size, mx = arr[0], i, *count, *result;
