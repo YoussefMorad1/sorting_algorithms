@@ -7,15 +7,15 @@
 void counting_sort(int *arr, size_t size)
 {
 	int n = (int)size, mx = arr[0], i, *count, *result;
-
+	
+	if (!arr)
+		return;
 	result = malloc(n * sizeof(int));
 	if (!result)
 		return;
 	for (i = 1; i < n; ++i)
-	{
 		if (arr[i] > mx)
 			mx = arr[i];
-	}
 	count = malloc((mx + 1) * sizeof(int));
 	if (!count)
 	{
