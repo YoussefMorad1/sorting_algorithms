@@ -31,12 +31,12 @@ int partition(int *arr, int l, int r, int n)
 		{
 			mnIdx++;
 			swap(&arr[mnIdx], &arr[i]);
-			if (mnIdx != i)
+			if (mnIdx != i && arr[mnIdx] != arr[i])
 				print_array(arr, n);
 		}
 	}
 	swap(&arr[++mnIdx], &arr[r - 1]);
-	if (mnIdx != r - 1)
+	if (mnIdx != r - 1 && arr[mnIdx] != arr[r - 1])
 		print_array(arr, n);
 	return (mnIdx);
 }
