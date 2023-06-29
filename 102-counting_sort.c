@@ -6,11 +6,11 @@
  */
 void counting_sort(int *arr, size_t size)
 {
-	int n = (int)size, mx = arr[0], i, *count, *result;
+	int n = (int)size, mx, i, *count, *result;
 	
 	if (!arr)
 		return;
-	result = malloc(n * sizeof(int));
+	result = malloc(n * sizeof(int)), mx = arr[0];
 	if (!result)
 		return;
 	for (i = 1; i < n; ++i)
