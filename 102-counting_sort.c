@@ -7,11 +7,11 @@
 void counting_sort(int *arr, size_t size)
 {
 	int n = (int)size, mx, i, *count, *result;
-	
+
 	if (!arr)
 		return;
 	result = malloc(n * sizeof(int)), mx = arr[0];
-	if (!result)
+	if (!result || size == 1)
 		return;
 	for (i = 1; i < n; ++i)
 		if (arr[i] > mx)
@@ -34,6 +34,7 @@ void counting_sort(int *arr, size_t size)
 	{
 		count[i] += count[i - 1];
 	}
+	print_array(arr, mx + 1);
 	for (i = 0; i < n; ++i)
 	{
 		result[count[arr[i]] - 1] = arr[i];
